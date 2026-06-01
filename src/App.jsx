@@ -463,6 +463,8 @@ export default function App() {
                   src="/launching-post.webp"
                   alt="Foto Produk Unggulan Raswangi Kitchen"
                   className="hero-product-img"
+                  loading="eager"   // ← tambahkan ini
+                  fetchpriority="high"  // ← dan ini
                 />
               </div>
             </div>
@@ -503,11 +505,7 @@ export default function App() {
                 <div className="editorial-card">
                   <div>
                     <div className="card-media">
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="card-img"
-                      />
+                      <img src={item.image} alt={item.name} className="card-img" loading="lazy" />
                     </div>
                     <div className="card-meta-row">
                       <span className="card-tag">{item.tag}</span>
