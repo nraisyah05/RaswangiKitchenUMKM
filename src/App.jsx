@@ -105,7 +105,7 @@ const MENU = [
         icon: "🎋",
         tag: "Signature Selection",
         num: "01",
-        image: "/tumpeng-post.png",
+        image: "/tumpeng-post.webp",
         prices: [{ label: "Per Porsi / Paket", price: "Rp 300.000" }]
       },
       {
@@ -114,7 +114,7 @@ const MENU = [
         icon: "🍛",
         tag: "House Favorite",
         num: "02",
-        image: "/nasi-uduk-post.png",
+        image: "/nasi-uduk-post.webp",
         prices: [{ label: "Per Porsi", price: "Rp 15.000" }]
       },
       {
@@ -123,7 +123,7 @@ const MENU = [
         icon: "🥘",
         tag: "Chef's Special",
         num: "03",
-        image: "/nasi-goreng-post.png",
+        image: "/nasi-goreng-post.webp",
         prices: [{ label: "Per Porsi", price: "Rp 13.000" }]
       },
     ],
@@ -138,7 +138,7 @@ const MENU = [
         icon: "🍌",
         tag: "Artisanal Crispy",
         num: "01",
-        image: "/kpisang-post.png",
+        image: "/kpisang-post.webp",
         prices: [
           { label: "1/4 Kg", price: "Rp 20.000" },
           { label: "1/2 Kg", price: "Rp 40.000" },
@@ -151,7 +151,7 @@ const MENU = [
         icon: "🌶️",
         tag: "Spiced Premium",
         num: "02",
-        image: "/kcabe-post.png",
+        image: "/kcabe-post.webp",
         prices: [
           { label: "1/4 Kg", price: "Rp 15.000" },
           { label: "1/2 Kg", price: "Rp 30.000" },
@@ -164,7 +164,7 @@ const MENU = [
         icon: "🥜",
         tag: "Heritage Recipe",
         num: "03",
-        image: "/peyek-post.png",
+        image: "/peyek-post.webp",
         prices: [
           { label: "1/4 Kg", price: "Rp 25.000" },
           { label: "1/2 Kg", price: "Rp 50.000" },
@@ -460,7 +460,7 @@ export default function App() {
             <div className="hero-frame-visual">
               <div className="hero-frame-inner">
                 <img
-                  src="/launching-post.png"
+                  src="/launching-post.webp"
                   alt="Foto Produk Unggulan Raswangi Kitchen"
                   className="hero-product-img"
                 />
