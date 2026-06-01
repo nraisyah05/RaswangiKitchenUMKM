@@ -1,5 +1,99 @@
 import { useState, useEffect, useRef } from "react";
 
+// const MENU = [
+//   {
+//     category: "Nasi Spesial",
+//     emoji: "🍚",
+//     items: [
+//       {
+//         name: "Nasi Tumpeng",
+//         desc: "Tumpeng megah dengan lauk-pauk Nusantara pilihan, dikurasi khusus untuk meluhurkan momen syukuran agung Anda.",
+//         icon: "🎋",
+//         tag: "Signature Selection",
+//         num: "01",
+//         image: "/src/assets/tumpeng post.png",
+//         prices: [{ label: "Per Porsi / Paket", price: "Rp 300.000" }] // Ganti nominal sesuai harga Anda
+//       },
+//       {
+//         name: "Nasi Uduk Spesial",
+//         desc: "Nasi uduk gurih dengan perasan santan murni pertama, disajikan dengan ragam lauk otentik bercita rasa aristokrat.",
+//         icon: "🍛",
+//         tag: "House Favorite",
+//         num: "02",
+//         image: "/src/assets/nasi uduk post.png",
+//         prices: [{ label: "Per Porsi", price: "Rp 15.000" }]
+//       },
+//       {
+//         name: "Nasi Goreng",
+//         desc: "Simfoni nasi goreng buatan rumah yang diolah bersama racikan rempah rahasia, melahirkan aroma klasik yang mendalam.",
+//         icon: "🥘",
+//         tag: "Chef's Special",
+//         num: "03",
+//         image: "/src/assets/nasi goreng post.png",
+//         prices: [{ label: "Per Porsi", price: "Rp 13.000" }]
+//       },
+//     ],
+//   },
+//   {
+//     category: "Cemilan Renyah",
+//     emoji: "🍿",
+//     items: [
+//       {
+//         name: "Keripik Pisang",
+//         desc: "Irisan pisang pilihan yang digoreng keemasan, menawarkan tekstur renyah halus yang ideal untuk pendamping teh sore.",
+//         icon: "🍌",
+//         tag: "Artisanal Crispy",
+//         num: "01",
+//         image: "/src/assets/kpisang post.png",
+//         prices: [
+//           { label: "1/4 Kg", price: "Rp 20.000" }, // Ganti nominal sesuai harga Anda
+//           { label: "1/2 Kg", price: "Rp 40.000" },
+//           { label: "1 Kg", price: "Rp 80.000" }
+//         ]
+//       },
+//       {
+//         name: "Keripik Cabe",
+//         desc: "Keripik tradisional dengan baluran sambal cabai asli yang dikeringkan sempurna, menghasilkan pedas yang elegan.",
+//         icon: "🌶️",
+//         tag: "Spiced Premium",
+//         num: "02",
+//         image: "/src/assets/kcabe post.png",
+//         prices: [
+//           { label: "1/4 Kg", price: "Rp 15.000" },
+//           { label: "1/2 Kg", price: "Rp 30.000" },
+//           { label: "1 Kg", price: "Rp 60.000" }
+//         ]
+//       },
+//       {
+//         name: "Tradisional Peyek Kacang",
+//         desc: "Rempeyek tipis buatan tangan dengan adonan tepung beras warisan, bertabur kacang tanah premium yang gurih.",
+//         icon: "🥜",
+//         tag: "Heritage Recipe",
+//         num: "03",
+//         image: "/src/assets/peyek post.png",
+//         prices: [
+//           { label: "1/4 Kg", price: "Rp 25.000" },
+//           { label: "1/2 Kg", price: "Rp 50.000" },
+//           { label: "1 Kg", price: "Rp 100.000" }
+//         ]
+//       },
+//       // {
+//       //   name: "Tradisional Peyek Teri",
+//       //   desc: "Kelembutan peyek renyah berpadu dengan ikan teri medan pilihan, menawarkan harmoni rasa asin gurih yang murni.",
+//       //   icon: "🐟",
+//       //   tag: "Savory Delicacy",
+//       //   num: "04",
+//       //   image: "/src/assets/kpisang post.png",
+//       //   prices: [
+//       //     { label: "1/4 Kg", price: "Rp 30.000" },
+//       //     { label: "1/2 Kg", price: "Rp 55.000" },
+//       //     { label: "1 Kg", price: "Rp 110.000" }
+//       //   ]
+//       // },
+//     ],
+//   },
+// ];
+
 const MENU = [
   {
     category: "Nasi Spesial",
@@ -7,29 +101,29 @@ const MENU = [
     items: [
       {
         name: "Nasi Tumpeng",
-        desc: "Tumpeng megah dengan lauk-pauk Nusantara pilihan, dikurasi khusus untuk meluhurkan momen syukuran agung Anda.",
+        desc: "Tumpeng megah dengan lauk-pauk Nusantara pilihan...",
         icon: "🎋",
         tag: "Signature Selection",
         num: "01",
-        image: "/src/assets/tumpeng post.png",
-        prices: [{ label: "Per Porsi / Paket", price: "Rp 300.000" }] // Ganti nominal sesuai harga Anda
+        image: "/public/tumpeng-post.png",
+        prices: [{ label: "Per Porsi / Paket", price: "Rp 300.000" }]
       },
       {
         name: "Nasi Uduk Spesial",
-        desc: "Nasi uduk gurih dengan perasan santan murni pertama, disajikan dengan ragam lauk otentik bercita rasa aristokrat.",
+        desc: "Nasi uduk gurih dengan perasan santan murni...",
         icon: "🍛",
         tag: "House Favorite",
         num: "02",
-        image: "/src/assets/nasi uduk post.png",
+        image: "/public/nasi-uduk-post.png",
         prices: [{ label: "Per Porsi", price: "Rp 15.000" }]
       },
       {
         name: "Nasi Goreng",
-        desc: "Simfoni nasi goreng buatan rumah yang diolah bersama racikan rempah rahasia, melahirkan aroma klasik yang mendalam.",
+        desc: "Simfoni nasi goreng buatan rumah...",
         icon: "🥘",
         tag: "Chef's Special",
         num: "03",
-        image: "/src/assets/nasi goreng post.png",
+        image: "/public/nasi-goreng-post.png",
         prices: [{ label: "Per Porsi", price: "Rp 13.000" }]
       },
     ],
@@ -40,24 +134,24 @@ const MENU = [
     items: [
       {
         name: "Keripik Pisang",
-        desc: "Irisan pisang pilihan yang digoreng keemasan, menawarkan tekstur renyah halus yang ideal untuk pendamping teh sore.",
+        desc: "Irisan pisang pilihan...",
         icon: "🍌",
         tag: "Artisanal Crispy",
         num: "01",
-        image: "/src/assets/kpisang post.png",
+        image: "/public/kpisang-post.png",
         prices: [
-          { label: "1/4 Kg", price: "Rp 20.000" }, // Ganti nominal sesuai harga Anda
+          { label: "1/4 Kg", price: "Rp 20.000" },
           { label: "1/2 Kg", price: "Rp 40.000" },
           { label: "1 Kg", price: "Rp 80.000" }
         ]
       },
       {
         name: "Keripik Cabe",
-        desc: "Keripik tradisional dengan baluran sambal cabai asli yang dikeringkan sempurna, menghasilkan pedas yang elegan.",
+        desc: "Keripik tradisional...",
         icon: "🌶️",
         tag: "Spiced Premium",
         num: "02",
-        image: "/src/assets/kcabe post.png",
+        image: "/public/kcabe-post.png",
         prices: [
           { label: "1/4 Kg", price: "Rp 15.000" },
           { label: "1/2 Kg", price: "Rp 30.000" },
@@ -66,30 +160,17 @@ const MENU = [
       },
       {
         name: "Tradisional Peyek Kacang",
-        desc: "Rempeyek tipis buatan tangan dengan adonan tepung beras warisan, bertabur kacang tanah premium yang gurih.",
+        desc: "Rempeyek tipis buatan tangan...",
         icon: "🥜",
         tag: "Heritage Recipe",
         num: "03",
-        image: "/src/assets/peyek post.png",
+        image: "/public/peyek-post.png",
         prices: [
           { label: "1/4 Kg", price: "Rp 25.000" },
           { label: "1/2 Kg", price: "Rp 50.000" },
           { label: "1 Kg", price: "Rp 100.000" }
         ]
       },
-      // {
-      //   name: "Tradisional Peyek Teri",
-      //   desc: "Kelembutan peyek renyah berpadu dengan ikan teri medan pilihan, menawarkan harmoni rasa asin gurih yang murni.",
-      //   icon: "🐟",
-      //   tag: "Savory Delicacy",
-      //   num: "04",
-      //   image: "/src/assets/kpisang post.png",
-      //   prices: [
-      //     { label: "1/4 Kg", price: "Rp 30.000" },
-      //     { label: "1/2 Kg", price: "Rp 55.000" },
-      //     { label: "1 Kg", price: "Rp 110.000" }
-      //   ]
-      // },
     ],
   },
 ];
@@ -379,7 +460,7 @@ export default function App() {
             <div className="hero-frame-visual">
               <div className="hero-frame-inner">
                 <img
-                  src="/src/assets/launching post.png"
+                  src="/public/launching-post.png"
                   alt="Foto Produk Unggulan Raswangi Kitchen"
                   className="hero-product-img"
                 />
