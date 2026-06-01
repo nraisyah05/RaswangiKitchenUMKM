@@ -639,6 +639,29 @@ export default function App() {
               </AnimSection>
             ))}
           </div>
+
+          {/* Setelah penutup </div> dari loc-grid */}
+          <AnimSection delay={0.3}>
+            <div style={{
+              marginTop: "2.5rem",
+              borderRadius: "1.25rem",
+              overflow: "hidden",
+              border: "1px solid rgba(255,255,255,0.1)",
+              boxShadow: "0 8px 32px rgba(0,0,0,0.18)",
+              lineHeight: 0,
+            }}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.403703230566!2d101.46839247447421!3d0.562623063601431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d5a9d5e85cb3bf%3A0x19cd55c058993d73!2sRaswangi%20Kitchen!5e1!3m2!1sid!2sid!4v1780302919794!5m2!1sid!2sid"
+                width="100%"
+                height="400"
+                style={{ border: 0, display: "block" }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Lokasi Raswangi Kitchen"
+              />
+            </div>
+          </AnimSection>
         </div>
       </section>
 
